@@ -1,18 +1,26 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { AppRoutingModule } from './app-routing.module';
+import { CoreModule } from './core/core.module';
+import { UserModule } from './user/user.module';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 import { AppComponent } from './app.component';
 
 
 @NgModule({
+  imports: [
+    BrowserModule,
+    CoreModule,
+    UserModule,
+    AppRoutingModule
+  ],
   declarations: [
     AppComponent
   ],
-  imports: [
-    BrowserModule
+  providers: [
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
