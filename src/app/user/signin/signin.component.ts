@@ -11,12 +11,14 @@ export class SigninComponent {
 
   constructor(public authService: AuthService, private fb: FormBuilder) {
     this.signInFormGroup = this.fb.group({
-      email: ['', Validators.required, Validators.email],
-      password: ['', Validators.required, Validators.minLength(8)]
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(8)]]
     });
   }
 
   login() {
-    this.authService.login();
+    if(this.signInFormGroup.valid) {
+      this.authService.login();
+    }
   }
 }
