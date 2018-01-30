@@ -34,6 +34,12 @@
                         <p class="d-lg-none">GitHub</p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link"  *ngIf="(isLoggedIn | async)" rel="tooltip" title="Logout" data-placement="bottom" href="#" (click)="logout()" >
+                        <i class="fa fa-sign-out"></i>
+                        <p class="d-lg-none">Logout</p>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>

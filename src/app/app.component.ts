@@ -10,8 +10,8 @@ export class AppComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.http.get('carList').subscribe((res) => {
-      console.log(res);
-    });
+    // this.http.get('carList').subscribe((res) => {
+    //   console.log(res);
+    // });
   }
 }
