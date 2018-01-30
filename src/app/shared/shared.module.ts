@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
     declarations: [
@@ -16,12 +17,18 @@ import { RouterModule } from '@angular/router';
         ReactiveFormsModule,
         RouterModule,
         CommonModule,
-        BrowserModule
+        BrowserModule,
+        HttpClientModule
     ],
     exports: [
         NavbarComponent,
-        FooterComponent
-    ],
+        FooterComponent,
+        BrowserModule,
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
+        HttpClientModule
+        ],
     providers: [
     ]
 })

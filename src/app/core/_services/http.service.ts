@@ -22,7 +22,8 @@ export class HttpService implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     this.requestCalls++;
     this.showLoader();
-    return next.handle(request).pipe(map(event => {
+    const apiRequest = request.clone({ url: `http://localhost:8080/${request.url}`});
+    return next.handle(apiRequest).pipe(map(event => {
       return event;
     }),
       catchError(error => {
