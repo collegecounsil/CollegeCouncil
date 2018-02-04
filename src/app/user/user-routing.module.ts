@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { SigninComponent } from './signin/signin.component';
 import { ChangePaswordComponent } from './change-password/change-password.component';
+import { SignUpComponent } from './signup/signup.component';
 @NgModule({
   imports: [
     RouterModule.forChild([
@@ -14,8 +15,8 @@ import { ChangePaswordComponent } from './change-password/change-password.compon
         component: ChangePaswordComponent
       },
       {
-        path: 'sign_up',
-        component: ChangePaswordComponent
+        path: 'signup',
+        component: SignUpComponent
       }
     ])
   ],

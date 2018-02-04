@@ -7,13 +7,13 @@
                     <div class="card card-register">
                         <h3 class="title">Welcome</h3>
                         <div class="social-line text-center">
-                            <a href="#pablo" class="btn btn-neutral btn-facebook btn-just-icon">
+                            <a href="javascript:void(0);" class="btn btn-neutral btn-facebook btn-just-icon">
                                 <i class="fa fa-facebook-square"></i>
                             </a>
-                            <a href="#pablo" class="btn btn-neutral btn-google btn-just-icon">
+                            <a href="javascript:void(0);" class="btn btn-neutral btn-google btn-just-icon">
                                 <i class="fa fa-google-plus"></i>
                             </a>
-                            <a href="#pablo" class="btn btn-neutral btn-twitter btn-just-icon">
+                            <a href="javascript:void(0);" class="btn btn-neutral btn-twitter btn-just-icon">
                                 <i class="fa fa-twitter"></i>
                             </a>
                         </div>
@@ -22,12 +22,13 @@
                             <input type="text" formControlName="email" class="form-control" placeholder="Email" />
 
                             <label>Password</label>
-                            <input type="password" formControlName="password" class="form-control" placeholder="Password" />
-                            <button type="submit" class="btn btn-danger btn-block btn-round">Register</button>
+                            <input type="password" formControlName="password" autocomplete class="form-control" placeholder="Password" />
+                            <button type="submit" class="btn btn-danger btn-block btn-round">Sign In</button>
                         </form>
-                        <div class="forgot">
-                            <a href="#" class="btn btn-link btn-danger">Forgot password?</a>
-                        </div>
+                        <span class="haveaccount">
+                            New User? <a href="javascript:void(0);" [routerLink]="['/signup']" class="btn btn-link btn-danger">Sign Up</a>
+                            <a href="javascript:void(0);" class="btn btn-link btn-danger">Forgot password?</a>
+                        </span>
                     </div>
                 </div>
             </div>

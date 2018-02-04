@@ -1,0 +1,70 @@
+<div class="wrapper">
+    <div class="page-header" style="background-image: url('../assets/img/login-image.jpg');">
+        <div class="filter"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-sm-12 mr-auto ml-auto">
+                    <div class="card card-register">
+                        <h3 class="title">Welcome</h3>
+                        <div class="social-line text-center">
+                            <a href="javascript:void(0);" class="btn btn-neutral btn-facebook btn-just-icon">
+                                <i class="fa fa-facebook-square"></i>
+                            </a>
+                            <a href="javascript:void(0);" class="btn btn-neutral btn-google btn-just-icon">
+                                <i class="fa fa-google-plus"></i>
+                            </a>
+                            <a href="javascript:void(0);" class="btn btn-neutral btn-twitter btn-just-icon">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </div>
+                        <form [formGroup]="signUpFormGroup" class="register-form" (ngSubmit)="register()" novalidate="novalidate">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label>First Name</label>
+                                    <input type="text" formControlName="firstName" class="form-control" placeholder="First Name" />
+                                </div>
+                                <div class="col-sm-6">
+                                    <label>Last Name</label>
+                                    <input type="text" formControlName="lastName" class="form-control" placeholder="Last Name" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label>Email</label>
+                                    <input type="text" formControlName="email" class="form-control" placeholder="Email" />
+                                </div>
+                                <div class="col-sm-6">
+                                    <label>Phone</label>
+                                    <input type="text" formControlName="phone" class="form-control" placeholder="Phone" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label>Password</label>
+                                    <input type="password" formControlName="password" autocomplete class="form-control" placeholder="Password" />
+                                </div>
+                                <div class="col-sm-6">
+                                    <label>Re-Enter Password</label>
+                                    <input type="password" formControlName="repassword" autocomplete class="form-control" placeholder="Re-Enter Password" />
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-danger btn-block btn-round">Sign Up</button>
+                        </form>
+                        
+                        <div class="haveaccount">
+                            Already have an account?<a href="javascript:void(0);" [routerLink]="['/login']" class="btn btn-link btn-danger">Sign In.</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer register-footer text-center">
+                <h6>
+                    Designed and coded by Creative
+                    <a href="http://wwww.facebook.com/world.raj95" target="_blank">
+                        Raj Chauhan
+                    </a>
+                </h6>
+            </div>
+        </div>
+    </div>
+</div>
