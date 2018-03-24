@@ -27,14 +27,19 @@ export class AuthService {
       withCredentials: true
     };
     this.http.post('auth', usernameAndPassword, options).subscribe((res) => {
+      localStorage.setItem('token', 'JWT');
       this.isLoginSubject.next(true);
       if (this.redirectUrl) {
         this.router.navigate([this.redirectUrl]);
       } else {
         this.router.navigate(['/']);
       }
+
     },
-      error => console.log('error')
+      error => {
+        console.log('error');
+        this.isLoginSubject.next(false);
+      }
     );
 
   }
@@ -46,11 +51,6 @@ export class AuthService {
   }
 
   private hasToken(): boolean {
-
-    setTimeout(() => {
-      this.isLoginSubject.next(true);
-    }, 5000);
-
     return !!localStorage.getItem('token');
   }
 }
