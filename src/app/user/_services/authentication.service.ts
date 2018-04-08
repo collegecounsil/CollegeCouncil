@@ -1,12 +1,11 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from "rxjs";
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-
 import { Router } from '@angular/router';
 
 @Injectable()
 export class AuthService {
-  isLoginSubject = new BehaviorSubject<boolean>(this.hasToken());
+  isLoginSubject = new BehaviorSubject<boolean>(false);
   redirectUrl: string;
   headers = new HttpHeaders({
     'Accept': 'application/json',
@@ -27,7 +26,6 @@ export class AuthService {
       withCredentials: true
     };
     this.http.post('auth', usernameAndPassword, options).subscribe((res) => {
-      localStorage.setItem('token', 'JWT');
       this.isLoginSubject.next(true);
       if (this.redirectUrl) {
         this.router.navigate([this.redirectUrl]);
@@ -39,18 +37,12 @@ export class AuthService {
       error => {
         console.log('error');
         this.isLoginSubject.next(false);
-      }
-    );
-
+      });
   }
 
   logout(): void {
-    localStorage.removeItem('token');
     this.isLoginSubject.next(false);
     this.router.navigate(['login']);
   }
 
-  private hasToken(): boolean {
-    return !!localStorage.getItem('token');
-  }
 }

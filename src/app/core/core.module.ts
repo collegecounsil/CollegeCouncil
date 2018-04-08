@@ -6,6 +6,7 @@ import { ConfigurationService } from './_services/configuration.service';
 import { MyErrorHandler } from './_services/exception-handling.service';
 import { LoaderService } from './_components/loader/loader.service';
 import { LoaderComponent } from './_components/loader/loader.component';
+import { ApiService } from './_services/api.service';
 export function configurationServiceFactory(configurationService: ConfigurationService): Function {
     return () => { return configurationService.init(); };
 }
@@ -17,6 +18,7 @@ export function configurationServiceFactory(configurationService: ConfigurationS
         LoaderComponent
     ],
     providers: [
+        ApiService,
         ConfigurationService,
         LoaderService,
         {
