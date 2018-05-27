@@ -46,7 +46,7 @@ export class SignUpComponent implements OnInit{
   register() {
     console.log(this.signUpFormGroup.value);
     if (this.signUpFormGroup.valid) {
-      this.http.post('register', this.signUpFormGroup.value).subscribe((res) => {
+      this.http.post('user/register', this.signUpFormGroup.value).subscribe((res) => {
         console.log(res);
       });
     }

@@ -17,7 +17,7 @@ export enum RequestMethod {
 @Injectable()
 export class ApiService {
 
-  headers = new HttpHeaders({
+  private headers = new HttpHeaders({
     'Accept': 'application/json',
     'Content-Type': 'application/json'
   });
