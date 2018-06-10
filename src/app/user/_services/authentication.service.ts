@@ -40,6 +40,18 @@ export class AuthService {
       });
   }
 
+
+  // Run Application without api(s)
+
+  // login(usernameAndPassword): void {
+  //   this.isLoginSubject.next(true);
+  //   if (this.redirectUrl) {
+  //         this.router.navigate([this.redirectUrl]);
+  //       } else {
+  //         this.router.navigate(['/']);
+  //       }
+  // }
+
   logout(): void {
     this.isLoginSubject.next(false);
     this.router.navigate(['login']);

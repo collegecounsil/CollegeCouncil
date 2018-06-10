@@ -11,10 +11,12 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/do';
 import { catchError, finalize, map } from 'rxjs/operators';
 import { LoaderService } from '../_components/loader/loader.service';
+import { environment } from '../../../environments/environment';
 
 @Injectable()
 export class HttpService implements HttpInterceptor {
   requestCalls: number;
+  apiUrl = environment.apiUrl;
   constructor(private loaderService: LoaderService) {
     this.requestCalls = 0;
   }
@@ -23,7 +25,8 @@ export class HttpService implements HttpInterceptor {
     this.requestCalls++;
     this.showLoader();
     // const apiRequest = request.clone({ url: `http://13.127.130.44/CollegeCouncil/${request.url}`});
-     const apiRequest = request.clone({ url: `http://localhost:8080/SC/${request.url}`});
+    //  const apiRequest = request.clone({ url: this.apiUrl +`CollegeCouncil/${request.url}`});
+    const apiRequest = request.clone({ url: `http://localhost:8080/SC/${request.url}`});
     return next.handle(apiRequest).pipe(map(event => {
       return event;
     }),

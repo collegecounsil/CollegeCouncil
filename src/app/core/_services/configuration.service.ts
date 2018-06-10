@@ -20,4 +20,14 @@ export class ConfigurationService {
             });
         });
     }
+
+    // Run Application without api(s)
+
+    // init(): Promise<any> {
+    //     return new Promise((resolve, reject) => {
+    //         let authenticationService = this.injector.get(AuthService);
+    //         authenticationService.isLoginSubject.next(true);
+    //         resolve();
+    //     });
+    // }
 }
