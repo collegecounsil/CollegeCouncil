@@ -9,6 +9,7 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { ProfileComponent } from './profile/profile.component';
+import { UserService } from './services/user-info.service';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { ProfileComponent } from './profile/profile.component';
     ProfileComponent
   ],
   providers: [
-    { provide: LocationStrategy, useClass: HashLocationStrategy }
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
+    UserService
   ],
   bootstrap: [AppComponent]
 })
